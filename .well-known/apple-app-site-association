@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "DEIN-TEAM-ID.com.xsentor.foodray",
+        "paths": ["/product/*"]
+      }
+    ]
+  }
+}
