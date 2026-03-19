@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodRay</title>
+  <script>
+    // EAN aus der URL extrahieren
+    const match = window.location.pathname.match(/\/product\/(\d+)/);
+    const ean = match ? match[1] : null;
+    if (ean) {
+      // Versuche App zu öffnen
+      window.location.href = 'foodray://product/' + ean;
+      // Fallback nach 2 Sekunden → Play Store
+      setTimeout(() => {
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.xsentor.foodray';
+      }, 2000);
+    } else {
+      window.location.href = 'https://play.google.com/store/apps/details?id=com.xsentor.foodray';
+    }
+  </script>
+</head>
+<body>
+  <p style="font-family:sans-serif;text-align:center;margin-top:40px">
+    🛡️ FoodRay wird geöffnet...<br><br>
+    <small>Falls nichts passiert, bitte FoodRay im Store installieren.</small>
+  </p>
+</body>
+</html>
